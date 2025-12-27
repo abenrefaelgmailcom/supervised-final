@@ -1,0 +1,63 @@
+
+1. גם וגם 
+RandomForestClassifier → בעיות קלסיפיקציה
+RandomForestRegressor → בעיות רגרסיה
+
+2. Ensemble Learning - יצירת מודל אחד חזק במקום כמה חלשים
+בונים הרבה עצי Decision Tree
+כל עץ רואה נתונים שונים ו־תכונות שונות
+כל עץ נותן תחזית
+מחברים את כל התחזיות לתוצאה אחת טובה ויציבה יותר
+
+3.אוסף (Forest) של עצי Decision Tree
+כל עץ:
+נבנה כמו עץ רגיל (CART)
+משתמש ב־Gini / Entropy / MSE
+אבל… הוא לא רואה את כל הנתונים ולא את כל הפיצ’רים
+
+4. זו דגימה עם החזרה
+לכל עץ בוחרים באקראי דגימות מתוך ה־dataset
+מותר לבחור אותה דגימה יותר מפעם אחת
+חלק מהדגימות לא ייבחרו בכלל
+כך:
+כל עץ רואה Dataset קצת שונה
+העצים פחות דומים אחד לשני
+
+5.  מקטין Overfitting
+מפחית תלות בנקודות חריגות
+גורם לעצים להיות לא מתואמים (Uncorrelated)
+
+6. כל עץ נותן מחלקה (Class)
+בסוף: בוחרים את המחלקה שקיבלה הכי הרבה קולות
+
+7. כל עץ מקבל YES/NO ובסוף אומרים כמה יש מכל אחד בסןף
+
+8. לפי ממוצע
+
+9. n_estimators מספר העצים ביער
+max_depth עומק מקסימלי של כל עץ
+min_samples_split מינימום דגימות לפיצול
+min_samples_leaf מינימום דגימות בעלה
+max_features מספר פיצ’רים אקראיים לכל פיצול
+bootstrap האם להשתמש ב־Bootstrap Sampling
+
+10.מדד הערכה פנימי של Random Forest
+לא צריך Train/Test Split, הערכת ביצועים מהירה ואמינה
+
+11. Decision Tree	
+רגיש מאוד לשינויים בדאטה	- נוטה ל־Overfitting - עץ אחד	
+Random Forest - יציב מאוד  	מפחית Overfitting - הרבה עצים
+
+12. קלסיפיקציה
+Accuracy
+Precision
+Recall
+F1-Score
+Confusion Matrix
+ROC-AUC
+רגרסיה
+ 
+MSE
+RMSE
+MAE
+R²
